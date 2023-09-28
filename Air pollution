@@ -1,0 +1,6 @@
+import requests
+city=input("Enter the city: ")
+url="http://api.openweathermap.org/data/2.5/air_pollution?lat=16.3&lon=80.45&appid=fb07fb270f76606047aeba0613bae836"
+res=requests.get(url)
+r=res.json()
+print(r)
