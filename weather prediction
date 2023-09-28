@@ -1,0 +1,32 @@
+"""
+I took current weather data from this website https://openweathermap.org/api
+and I generated my api id fb07fb270f76606047aeba0613bae836
+"""
+
+import requests
+city=input("Enter the city: ")
+url = "http://api.openweathermap.org/data/2.5/weather?&q="+city+"&APPID=fb07fb270f76606047aeba0613bae836"
+res=requests.get(url)
+r=res.json()
+x=r['coord']
+y=r['weather']
+z=r['main']
+lon=x['lon']
+lat=x['lat']
+temp=z['temp']
+humidity=z['humidity']
+desc=y[0]['description']
+print("Temparature in",city,"is:",temp)
+print("Weather description:",desc)
+print("Humidity in air is:",humidity)
+print("latitude is:",lat)
+print("longitude is:",lon)
+
+
+output:
+Enter the city: guntur
+Temparature in guntur is: 303.09
+Weather description: overcast clouds
+Humidity in air is: 66
+latitude is: 16.3
+longitude is: 80.45
